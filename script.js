@@ -3,8 +3,25 @@
 // in the html.
 $(function () {
   var today = dayjs();
-
+  var currentHour = today.$H;
+  console.log(today);
   var saveBtn = $(".saveBtn");
+  var container = $(".container-fluid");
+  var currentDay = $("#currentDay");
+
+  currentDay.text(today.$d);
+
+  container.children().each(function () {
+    var hourString = this.id.match(/\d+/);
+    var hour = parseInt(hourString);
+    if (hour < currentHour) {
+      $(this).addClass("past");
+    } else if (hour === currentHour) {
+      $(this).addClass("present");
+    } else {
+      $(this).addClass("future");
+    }
+  });
 
   // TODO: Add a listener for click events on the save button. This code should
   saveBtn.on("click", function () {
@@ -20,8 +37,6 @@ $(function () {
     // attribute of each time-block be used to conditionally add or remove the
     // past, present, and future classes? How can Day.js be used to get the
     // current hour in 24-hour time?
-    var currentHour = today.$H;
-    console.log(currentHour);
   });
 
   // TODO: Add code to get any user input that was saved in localStorage and set
