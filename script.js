@@ -4,7 +4,6 @@
 $(function () {
   var today = dayjs();
   var currentHour = today.$H;
-  console.log(today);
   var saveBtn = $(".saveBtn");
   var container = $(".container-fluid");
   var currentDay = $("#currentDay");
