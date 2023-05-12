@@ -7,3 +7,5 @@ The purpose of this project was to use jqery and the Day.js API to create a work
 ![Screen shot of application](./images/app.png)
 
 [Link to application](https://jboyce313.github.io/work-day-scheduler/)
+
+HTML and CSS for this app were provided by the Full Stack Bootcamp at the University of Kansas.
